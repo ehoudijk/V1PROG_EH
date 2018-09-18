@@ -1,11 +1,7 @@
-def wijzig(letterlijst):
-    letterlijst.clear()
-    letterlijst.append('d')
-    letterlijst.append('e')
-    letterlijst.append('f')
+def hello(naam):
+    line = 'welcome, ' + str(naam) + ', to the world of Python.'
+    print(line)
 
 
-lijst = ['a', 'b', 'c']
-print(lijst)
-wijzig(lijst)
-print(lijst)
+name = 'eric'
+hello(name)
