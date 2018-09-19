@@ -18,17 +18,17 @@ def ritprijs(leeftijd, weekendrit, afstandkm):
         return int(standaardtarief(afstandkm) * 0.6)
 
 
-afstandkm = eval(input('Hoeveel KM ga je reizen? '))
-leeftijd = eval(input('Wat is jouw leeftijd? '))
-weekendrit = input('Reis je in het weekend (Ja/Nee)? ')
+distance = eval(input('Hoeveel KM ga je reizen? '))
+age = eval(input('Wat is jouw leeftijd? '))
+weekend = input('Reis je in het weekend (Ja/Nee)? ')
 
-while (weekendrit != 'Ja') and (weekendrit != 'Nee'):
+while (weekend != 'Ja') and (weekend != 'Nee'):
     print('Antwoord met Ja of Nee')
-    weekendrit = input('Reis je in het weekend (Ja/Nee)? ')
+    weekend = input('Reis je in het weekend (Ja/Nee)? ')
 
-if weekendrit == 'Ja':
-    weekendrit = True
-if weekendrit == 'Nee':
-    weekendrit = False
+if weekend == 'Ja':
+    weekend = True
+if weekend == 'Nee':
+    weekend = False
 
-print("€{0:.2f}".format((ritprijs(leeftijd, weekendrit, afstandkm) / 100)))
+print("€{0:.2f}".format((ritprijs(age, weekend, distance) / 100)))
