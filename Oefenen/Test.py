@@ -18,8 +18,8 @@ def ritprijs(leeftijd, weekendrit, afstandKM):
         return int(standaardtarief(afstandKM) * 0.6)  # 40% korting
 
 
-afstandKM = eval(input('Hoeveel KM ga je reizen? ')
-leeftijd = 11
+afstandKM = eval(input('Hoeveel KM ga je reizen? '))
+leeftijd = eval(input('Wat is jouw leeftijd? '))
 weekendrit = True
 
 print("€{0:.2f}".format((ritprijs(leeftijd, weekendrit, afstandKM)/100)))

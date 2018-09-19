@@ -1,7 +1,6 @@
-a = 520
-b = 1520
-c = 5100
+def changevalue(x):
+    x = [3,4,5]
 
-print("€{0:.2f}".format(a/100))
-print("€{0:.2f}".format(b/100))
-print("€{0:.2f}".format(c/100))
+b = [1,2,3]
+changevalue(b)
+print(b)
