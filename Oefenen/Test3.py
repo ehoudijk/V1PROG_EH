@@ -1,7 +1,6 @@
 def standaardtarief(afstandKM):
     if afstandKM <= 0:
         return 0
-        print('€0.00')
     elif afstandKM <= 50:
         return afstandKM * 80
     elif afstandKM > 50:
@@ -9,22 +8,25 @@ def standaardtarief(afstandKM):
 
 
 def ritprijs(leeftijd, weekendrit, afstandKM):
-    if (leeftijd <12 or leeftijd > 64) and weekendrit is False:
+    if (leeftijd <12 or leeftijd > 64) and weekendrit is 'Nee':
         return int(standaardtarief(afstandKM) * 0.7)
-    elif (leeftijd <12 or leeftijd > 64) and weekendrit is True:
+    elif (leeftijd <12 or leeftijd > 64) and weekendrit is 'Ja':
         return int(standaardtarief(afstandKM) * 0.65)
-    elif (11 < leeftijd < 65) and weekendrit is False:
+    elif (11 < leeftijd < 65) and weekendrit is 'Nee':
         return int(standaardtarief(afstandKM) * 1)
-    elif (11 < leeftijd < 65) and weekendrit is True:  # leeftijdscomp simpeler als 11 < leeftijd < 65
+    elif (11 < leeftijd < 65) and weekendrit is 'Ja':  # leeftijdscomp simpeler als 11 < leeftijd < 65
         return int(standaardtarief(afstandKM) * 0.6)  # 40% korting
 
 
-afstandKM = -10
-leeftijd = 12
-weekendrit = True
+afstandKM = eval(input('Hoeveel KM ga je reizen? '))
+leeftijd = eval(input('Wat is jouw leeftijd? '))
+#weekendrit = (input('Reis je in het weekend (Ja/Nee)? ') == 'Ja')
+weekendrit = input('Reis je in het weekend (Ja/Nee)? ')
+if weekendrit == 'Ja':
+    print("€{0:.2f}".format((ritprijs(leeftijd, weekendrit, afstandKM) / 100)))
+#print('Antwoord met Ja of Nee')
 
-print(ritprijs(leeftijd, weekendrit, afstandKM))
 
 
-#  if afstandKM <= 0:
-#     print('€0.00')
+
+#print("€{0:.2f}".format((ritprijs(leeftijd, weekendrit, afstandKM)/100)))
