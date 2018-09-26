@@ -1,5 +1,8 @@
-weekendrit = input('Reis je in het weekend (Ja/Nee)? ')
+def nested(n):
+    for j in range(n):
+        for i in range(j+1):
+            print(i, end=' ')
+        print()
 
-while (weekendrit != 'Ja') and (weekendrit != 'Nee'):
-    print('Niet correct')
-    weekendrit = input('Reis je in het weekend (Ja/Nee)? ')
+n = 5
+nested (n)
