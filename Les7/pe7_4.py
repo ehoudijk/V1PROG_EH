@@ -1,9 +1,9 @@
-outfile = open('hardlopers.txt', 'w')
-
 import datetime
+
+infile = open('hardlopers.txt', 'w')
 vandaag = datetime.datetime.today()
 s = vandaag.strftime("%a %d %b %Y, %H:%M:%S, ")
-outfile.write(s + input('Naam van persoon: ') + '\n')
+infile.write(s + input('Naam van persoon: ') + '\n')
 
 
 while True:
@@ -16,4 +16,3 @@ while True:
         break
     else:
         infile.write(x + '\n')
-
