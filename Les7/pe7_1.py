@@ -1,10 +1,12 @@
-def acronym(input):
-    'returns acronym of input string'
-    words = input.split()
-    res = ''
-    for word in words:
-        res = res + word[0].upper()
-    return res
+def convert(tempc):
+    fahrenheit = int(tempc) * 1.8 + 32
+    return fahrenheit
 
-acro = acronym('utrecht science park')
-print(acro)
+def table(tempcon):
+    print('   F    C')
+    formatStr = '{:5} {:5}'
+    for i in range(-30, 50, 10):
+        print(formatStr.format(convert(i), float(i)))
+
+
+table(0)
