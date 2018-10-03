@@ -1,12 +1,9 @@
-def convert(tempc):
-    fahrenheit = int(tempc) * 1.8 + 32
-    return fahrenheit
+index = 1
 
-def table(minimum, maximum, stap):
-    print('   F    C')
-    formatStr = '{:5} {:5}'
-    for i in range(minimum, maximum, stap):
-        print(formatStr.format(convert(i), float(i)))
+while True:
+    if (index < 8):
+        index += 2
+    else:
+        break
 
-
-table(-30, 50, 10)
+print(index)
