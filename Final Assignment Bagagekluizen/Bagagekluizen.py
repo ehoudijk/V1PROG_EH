@@ -1,6 +1,8 @@
 def toon_keuze_kluizen_vrij():
     'toont het aantal vrije kluizen'
-    beschikbaar = 12 - len(keuze)
+    kluizen = open('kluizen.txt', 'r+')
+    uitgegeven = len(kluizen.readlines())
+    beschikbaar = (12 - uitgegeven)
     if beschikbaar <= 0:
         vrij = 'Er zijn geen kluizen meer beschikbaar\n'
     elif beschikbaar == 1:
@@ -9,13 +11,14 @@ def toon_keuze_kluizen_vrij():
         vrij = ('Er zijn {} kluizen beschikbaar\n'.format(beschikbaar))
 
     print(vrij)
+    kluizen.close()
 
 
 def nieuwe_kluis():
     'laat iemand een nieuwe kluis aanvragen en een code opgeven'
+    kluizen = open('kluizen.txt', 'r+')
     nummering = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     vergeven = []
-    kluizen = open('kluizen.txt', 'r+')
     aantal = kluizen.readlines()
     for regel in aantal:
         nummers = regel.split(';')
@@ -37,16 +40,22 @@ def nieuwe_kluis():
 
 
 def kluis_openen():
-    """hiermee kan een kluis geopent worden"""
+    kluizen = open('kluizen.txt', 'r+')
     aantal = kluizen.readlines()
+    nraantal = len(aantal)
+    teller = 0
     x = [i.split(';') for i in aantal]
     kluisnum = input('geef uw kluisnummer: ')
     kluisww = input('geef uw wachtwoord: ')
-    for i in x:
-        if x[0][0] == kluisnum and x[0][1] == kluisww:
-            print('Dat is correct')
+    for g in range(len(x)):
+        if x[g][0] == kluisnum and x[g][1] == (kluisww + '\n'):
+            print('De kluis is nu open')
+            break
         else:
-            print('Geen geldige combinatie van kluisnummer en wachtwoord')
+            teller += 1
+            if teller == nraantal:
+                print('Geen geldige combinatie van kluisnummer en wachtwoord')
+    kluizen.close()
 
 
 kluizen = open('kluizen.txt', 'r+')  # openen text file
