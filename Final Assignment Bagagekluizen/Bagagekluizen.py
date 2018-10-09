@@ -3,7 +3,7 @@ def toon_keuze_kluizen_vrij():
     kluizen = open('kluizen.txt', 'r+')
     uitgegeven = len(kluizen.readlines())
     beschikbaar = (12 - uitgegeven)
-    if beschikbaar <= 0:
+    if beschikbaar <= 0:  # in plaats van printen had je ook het getal kunnen returnen. Nu niet nodig maar bij andere programmas kan je dan nog iets doen met de return waarde
         vrij = 'Er zijn geen kluizen meer beschikbaar\n'
     elif beschikbaar == 1:
         vrij = 'Er is nog 1 kluis beschikbaar\n'
