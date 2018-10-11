@@ -14,7 +14,7 @@ def inlezen_eindstation(stations, beginstation):
     while True:
         eind = input('Geef uw eindstation: ')
         if eind.lower() not in stations:
-            print('Dit station zit niet op deze lijn.')
+            print('Deze trein komt niet in {}.'.format(eind))
             continue
         else:
             if stations.index(beginstation) < stations.index(eind):
@@ -34,6 +34,10 @@ def omroepen_reis(stations, beginstation, eindstation):
     print('Het eindstation {} is het {} station in het traject.'.format(eindstation, eindnr))
     print('De afstand bedraagd {} station(s).'.format(afstand))
     print('De prijs van het kaartje is {} euro.'.format(prijs))
+    print('Jij stapt in de trein in: {}'.format(beginstation))
+    for i in range((beginnr+1), eindnr):
+        print(' - {}'.format(stations[i]))
+    print('Jij stapt uit in: {}'.format(eindstation))
 
 
 stations = ['schagen', 'heerhugowaard', 'alkmaar', 'castricum', 'zaandam', 'amsterdam sloterdijk', 'amsterdam centraal', 'amsterdam amstel', 'utrecht centraal', 's-hertogenbosch', 'weert', 'roermond', 'sittard', 'maastricht']
