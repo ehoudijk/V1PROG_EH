@@ -3,11 +3,13 @@ import csv
 
 with open('inloggers.csv', 'a', newline='') as myCSVFile:
     writer = csv.writer(myCSVFile, delimiter=';')
-#    writer.writerow(('naam', 'voorl', 'gbdatum', 'email'))
+
     while True:
         naam = input("Wat is je achternaam? ")
+
         if naam == 'einde':
             break
+
         else:
             voorl = input("Wat zijn je voorletters? ")
             gbdatum = input("Wat is je geboortedatum? ")
@@ -15,5 +17,3 @@ with open('inloggers.csv', 'a', newline='') as myCSVFile:
             vandaag = datetime.datetime.today()
             x = vandaag.strftime('%a %d %B %Y at %H:%M')
             writer.writerow((x, naam, voorl, gbdatum, email))
-
-    # '%a %d %B %Y at %H:%M;'
