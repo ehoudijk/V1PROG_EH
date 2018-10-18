@@ -18,7 +18,7 @@ for i in range(4):
     if str(file['Stations']['Station'][i]['Synoniemen']) == 'None':
         pass
     else:
-        print('{:4s}'.format(file['Stations']['Station'][i]['Code']) + ' - ' + str(file['Stations']['Station'][i]['Synoniemen']))
+        print('{:4s}'.format(file['Stations']['Station'][i]['Code']) + ' - ' + str(file['Stations']['Station'][i]['Synoniemen']['Synoniem']))
 
 print('\nDit is de lange naam van elk station:')
 for i in range(4):
