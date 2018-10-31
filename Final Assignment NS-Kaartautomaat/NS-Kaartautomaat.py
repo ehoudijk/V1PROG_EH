@@ -21,7 +21,7 @@ def inlezen_eindstation(stations, beginstation):
                 return eind
             else:
                 print('Deze trein komt niet in ' + eind)
-                break
+                continue
 
 
 def omroepen_reis(stations, beginstation, eindstation):
@@ -30,8 +30,8 @@ def omroepen_reis(stations, beginstation, eindstation):
     eindnr = stations.index(eindstation)
     afstand = stations.index(eindstation) - stations.index(beginstation)
     prijs = 5 * afstand
-    print('Het beginstation {} is het {} station in het traject.'.format(beginstation, beginnr))
-    print('Het eindstation {} is het {} station in het traject.'.format(eindstation, eindnr))
+    print('Het beginstation {} is het {}e station in het traject.'.format(beginstation, beginnr))
+    print('Het eindstation {} is het {}e station in het traject.'.format(eindstation, eindnr))
     print('De afstand bedraagd {} station(s).'.format(afstand))
     print('De prijs van het kaartje is {} euro.'.format(prijs))
     print('Jij stapt in de trein in: {}'.format(beginstation))
